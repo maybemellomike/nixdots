@@ -1,6 +1,6 @@
 # Liam's NixOS Dotfiles
 
-Boi oh boi 'tis been ages since I've bothered to figure out how to get back on here and get this goin'. My last [Github Repo Here](https://github.com/mellomike/thinkdots) is like 5 plus years old now. I've still been on ye ole Nix/Vim/Linux setup but lost access to that account and therefore just stopped because I didn't do too much to my setup between the last commit and then. Or so I thought...
+Boi oh boi 'tis been ages since I've bothered to figure out how to get back on here and get this goin'. My last [Github Repo Here](https://github.com/mahallow/thinkdots) is like 5 plus years old now. I've still been on ye ole Nix/Vim/Linux setup but lost access to that account and therefore just stopped because I didn't do too much to my setup between the last commit and then. Or so I thought...
 
 ## NixOS Still, Hyprland Now
 
