@@ -5,7 +5,7 @@ Boi oh boi 'tis been ages since I've bothered to figure out how to get back on h
 ## NixOS Still, Hyprland Now
 
 Gone are the days of XMonad and XMobar. Since realizing I could try Wayland, and really my computer is pretty simply used but a few of my 20+ year experience on Linux pain points were due to Xorg, I gave Hyprland a try and have found the quality of life for normal desktop use to be worth the hassle of switching window managers. That being said, I am MangoWC curious as it has the ability to add in a few things from XMonad I had configured which I grew used to. 
-![](scrot.png)
+![](scrot/scrot.png)
 
 ## Now With NixVim
 
