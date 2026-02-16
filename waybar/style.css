@@ -131,8 +131,16 @@ button:hover {
     color: #282828;
 }
 
+#window {
+    background-color: #076678;
+}
+
+#memory {
+    background-color: #d65d0e;
+}
+
 #network {
-    background-color: #98971a;
+    background-color: #b16286
 }
 @keyframes blink {
     to {
