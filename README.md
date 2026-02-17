@@ -13,6 +13,5 @@ After getting back into the whole customVim thing trying to add some Lua to my 1
 ![](scrot/nixvim.png)
 # Anyways
 
-Thanks for looking! I hope to keep this more up to date as it is rather handy having a way to reference changes over time for these sorts of things. Check out [my site for more detailed explinations](https://heinicke.xyz) and breakdowns of how the configuration works and philosophies behind it. 
-
+Thanks for looking! I hope to keep this more up to date as it is rather handy having a way to reference changes over time for these sorts of things. Check out [my site for more detailed explinations](https://heinicke.xyz) and breakdowns of how the configuration works and philosophies behind some choices. 
 
