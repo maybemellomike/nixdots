@@ -116,11 +116,9 @@ fonts.packages = with pkgs; [
       ubuntu-sans
       ubuntu-classic
       ubuntu-sans-mono
-      departure-mono
       nerd-fonts.lekton
-      nerd-fonts.anonymice
-      nerd-fonts.caskaydia-cove
       fantasque-sans-mono
+      cm_unicode
         ];
 
  # Don't change this lol

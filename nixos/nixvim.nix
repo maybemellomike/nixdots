@@ -25,6 +25,7 @@
       ignorecase = true; 
       termguicolors = true;
       scrolloff = 5;
+      smartindent = true;
       swapfile = false;
       linebreak = true;
       spell = true;
@@ -122,6 +123,11 @@
       mode = "n";
       action.__raw = "function() vim.lsp.buf.format() end, opts";
       }
+      { # Autocomplete?
+      key = "<C-Space>";
+      mode = "i";
+      action.__raw = "function() vim.lsp.completion.enable() end, opts";
+      }
       { # Zen
       key = "<C-g>";
       mode = "n";
@@ -146,6 +152,16 @@
       key = "<C-s>";
       mode = "n";
       action = ":! zathura %(echo % \| sed 's/tex$/pdf/') & disown <CR><CR>";
+      }
+      { # Clipboard with Leader	
+      key = "<C-y>";
+      mode = "v";
+      action = "\"+y";
+      }
+      { # Clipboard with Leader	
+      key = "<C-p>";
+      mode = "v";
+      action = "\"+p";
       }
       ];
   };
