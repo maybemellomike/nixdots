@@ -36,6 +36,7 @@
       
     plugins = {
       lualine.enable = true;
+      auto-pairs.enable = true;
       telescope.enable = true; 
       transparent.enable = true;
       oil.enable = true;
@@ -88,6 +89,11 @@
       key = "<Leader>f";
       mode = "n";
       action = ":Telescope find_files<CR>";
+      }
+      { # Virt split
+      key = "<Leader>vs";
+      mode = "n";
+      action = ":vsp<CR>";
       }
       { # Telescope Help
       key = "<Leader>h";
