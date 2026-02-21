@@ -11,6 +11,8 @@ Gone are the days of XMonad and XMobar. Since realizing I could try Wayland, and
 
 With much assistance from [Evan over here](https://github.com/evanrelf) I've now migrated over to a flakes based setup. Not entirely sure how it's working necessarily but at least it _is_ working and I know enough to reproduce it! 
 
+To reproduce this on a fresh NixOS install simple clone the repo, ```cp -r nixdots/config/* .config/``` to your local machine, enable flakes in the stock ```configuration.nix``` and then rebuild with ```sudo nixos-rebuild switch --flake .#your-hostname``` and if I'm not mistaken, you'll be rockin' the same setup as I. 
+
 ## Now With NixVim
 
 After getting back into the whole customVim thing trying to add some Lua to my 10 year old .vimrc which I shoved into the ```/etc/nixos/vim.nix``` file, I found out and learned how to configure NixVim! How sick is that hey, it works well, my pretty simple setup was relativly easy to port over and I don't know why you'd do anything else on Nixos. 
