@@ -11,7 +11,7 @@ Gone are the days of XMonad and XMobar. Since realizing I could try Wayland, and
 
 With much assistance from [Evan over here](https://github.com/evanrelf) I've now migrated over to a flakes based setup. Not entirely sure how it's working necessarily but at least it is working and I know enough to reproduce it!
 
-To reproduce this on a fresh NixOS install simple clone the repo, cp -r nixdots/config/* .config/ to your local machine, enable flakes in the stock configuration.nix and then rebuild with sudo nixos-rebuild switch --flake .#your-hostname and if I'm not mistaken, you'll be rockin' the same setup as I.
+To reproduce this on a fresh NixOS install simple clone the repo, enable flakes in the stock configuration.nix and then rebuild with sudo nixos-rebuild switch --flake .#your-hostname and if I'm not mistaken, you'll be rockin' the same setup as I. The config folder in this repo is linked to your ```~/.config/``` for the programs that matter so this should be pretty portable. 
 
 ## Now With NixVim
 
