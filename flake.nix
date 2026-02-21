@@ -1,11 +1,5 @@
 {
-  # Flake inputs are your dotfiles' dependencies. Add something here and its Git
-  # commit and content hash will be managed automatically in `flake.lock`. Run
-  # `nix flake update` to update all these inputs, or `nix flake update <input>`
-  # to update a specific one.
   inputs = {
-    # This is Nixpkgs, the Nix package set, which you're probably already
-    # familiar with.
     nixpkgs.url = "github:NixOS/nixpkgs";
     # These are some flake helper libraries that make writing a flake nicer.
     flake-parts = {
@@ -22,6 +16,10 @@
    stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+   home-manager = {
+     url = "github:nix-community/home-manager";
+     inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
