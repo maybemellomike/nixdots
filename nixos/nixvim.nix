@@ -1,12 +1,7 @@
-
+{ inputs, ...}:
 # NVim on Nix yo, 'tis NixVim
 
-  let
-    nixvim = import (builtins.fetchGit {
-      url = "https://github.com/nix-community/nixvim";
-    });
-  in
-  { imports = [nixvim.nixosModules.nixvim];
+  { imports = [inputs.nixvim.nixosModules.nixvim];
 
   programs.nixvim = {
     enable = true;

@@ -6,10 +6,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix 
       ./firefox.nix
+      ./stylix.nix
       ./apps.nix
       ./zsh.nix
       ./tmux.nix
-      # ./vim.nix
       ./nixvim.nix
     ];
 
@@ -73,7 +73,6 @@
  
  # Splash screen
   boot.plymouth.enable = true;
-  boot.plymouth.theme = "breeze";
 
  # Enable doas instead of sudo
     security.sudo.enable = false;
@@ -123,6 +122,6 @@ fonts.packages = with pkgs; [
 
  # Don't change this lol
   system.stateVersion = "25.05"; # Did you read the comment?
-
+  nix.settings.experimental-features = [ "flakes" "nix-command" ];
 }
 

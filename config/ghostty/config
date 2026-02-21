@@ -1,10 +1,10 @@
-theme = Gruvbox Material Dark
+theme = N0Tch2K
 font-family = "Fantasque Sans Mono"
 window-padding-x = 10
 background-opacity = 0.6
 unfocused-split-opacity = 0.7
-window-padding-x = 16
-window-padding-y = 16
+window-padding-x = 10
+window-padding-y = 10
 window-padding-balance = true 
 window-padding-color = background
 gtk-single-instance = desktop
