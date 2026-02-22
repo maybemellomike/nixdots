@@ -53,6 +53,7 @@
       };
 
 #LSP
+    lsp.inlayHints.enable = true;
     lsp.servers = {
         nixd.enable = true;
         nil_ls.enable = true;
