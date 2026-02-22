@@ -8,6 +8,9 @@ stylix.targets.nixvim.enable = false;
 stylix.targets.plymouth.enable = false;
 stylix.polarity = "dark";
   stylix.fonts = {
+    sizes = {
+      applications = 12;
+    };
     serif = {
       package = pkgs.newcomputermodern;
       name = "New Computer Modern";

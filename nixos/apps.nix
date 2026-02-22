@@ -5,9 +5,10 @@
 
 environment.systemPackages = with pkgs; [
     hugo
+    gimp
+    cryptsetup
     wiki-tui
     obs-studio
-    mangowc
     nix-search-cli
     networkmanager_dmenu
     wofi

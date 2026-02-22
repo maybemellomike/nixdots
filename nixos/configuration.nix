@@ -114,7 +114,6 @@ fonts.packages = with pkgs; [
       ubuntu-sans
       ubuntu-classic
       ubuntu-sans-mono
-      nerd-fonts.lekton
       fantasque-sans-mono
       cm_unicode
         ];

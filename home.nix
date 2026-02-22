@@ -14,6 +14,10 @@
        source = ./config/networkmanager-dmenu;
        recursive = true;
      };
+     file.".config/kitty" = {
+       source = ./config/kitty;
+       recursive = true;
+     };
      file.".config/waypaper" = {
        source = ./config/waypaper;
        recursive = true;
