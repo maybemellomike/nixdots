@@ -27,8 +27,6 @@
     isNormalUser = true;
     description = "liam";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" ];
-    packages = with pkgs; [
-    ];
   };
 
   users.users.liam.shell = pkgs.zsh ;
