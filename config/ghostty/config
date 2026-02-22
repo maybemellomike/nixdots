@@ -1,7 +1,7 @@
 theme = Everforest Dark Hard
-font-family = "Fantasque Sans Mono"
-window-padding-x = 10
-background-opacity = 0.65
+font-family = "Fantasque Sans Mono "
+window-padding-x = 11
+background-opacity = 0.75
 unfocused-split-opacity = 0.7
 window-padding-x = 10
 window-padding-y = 10

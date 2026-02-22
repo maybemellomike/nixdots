@@ -5,8 +5,17 @@
      username = "liam";
      homeDirectory = "/home/liam";
      stateVersion = "25.05"; # match your NixOS version
+
      file.".config/waybar" = {
        source = ./config/waybar;
+       recursive = true;
+     };
+     file.".config/networkmanager-dmenu" = {
+       source = ./config/networkmanager-dmenu;
+       recursive = true;
+     };
+     file.".config/waypaper" = {
+       source = ./config/waypaper;
        recursive = true;
      };
      file.".config/hypr" = {

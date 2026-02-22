@@ -9,8 +9,8 @@ environment.systemPackages = with pkgs; [
     obs-studio
     mangowc
     nix-search-cli
-    dmenu
     networkmanager_dmenu
+    wofi
     waybar
     mpv
     qutebrowser
