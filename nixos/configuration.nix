@@ -73,6 +73,7 @@
  
  # Splash screen
   boot.plymouth.enable = true;
+  boot.plymouth.theme = "breeze";
 
  # Enable doas instead of sudo
     security.sudo.enable = false;

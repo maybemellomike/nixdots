@@ -5,11 +5,12 @@
 stylix.enable = true; 
 stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
 stylix.targets.nixvim.enable = false;
+stylix.targets.plymouth.enable = false;
 stylix.polarity = "dark";
   stylix.fonts = {
     serif = {
-      package = pkgs.ubuntu-sans;
-      name = "Ubuntu Sans";
+      package = pkgs.newcomputermodern;
+      name = "New Computer Modern";
     };
 
     sansSerif = {
