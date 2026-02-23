@@ -5,7 +5,17 @@
      username = "liam";
      homeDirectory = "/home/liam";
      stateVersion = "25.05"; # match your NixOS version
+     # xdg.userDirs = {
+	 # enable = true;
+	 # download = "~/down";
+	 # documents = "~/dox";
+	 # videos = "~/vids";
+	 # pictures = "~/pix";
+     # };
 
+     file.".config/user-dirs.dirs" = {
+       source = ./config/user-dirs.dirs;
+     };
      file.".config/waybar" = {
        source = ./config/waybar;
        recursive = true;
@@ -24,10 +34,6 @@
      };
      file.".config/hypr" = {
        source = ./config/hypr;
-       recursive = true;
-     };
-     file.".config/ghostty" = {
-       source = ./config/ghostty;
        recursive = true;
      };
      file.".config/qutebrowser" = {

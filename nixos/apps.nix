@@ -20,8 +20,7 @@ environment.systemPackages = with pkgs; [
     ripgrep
     hyprshot
     bluetuith
-    pkgs.kitty
-    ghostty
+    kitty
     pciutils
     gotop
     yazi
