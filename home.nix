@@ -5,19 +5,12 @@
      username = "liam";
      homeDirectory = "/home/liam";
      stateVersion = "25.05"; # match your NixOS version
-     # xdg.userDirs = {
-	 # enable = true;
-	 # download = "~/down";
-	 # documents = "~/dox";
-	 # videos = "~/vids";
-	 # pictures = "~/pix";
-     # };
 
      file.".config/user-dirs.dirs" = {
        source = ./config/user-dirs.dirs;
      };
      file.".config/waybar" = {
-       source = ./config/waybar;
+       source = ./config/waybar/waybar_powerline;
        recursive = true;
      };
      file.".config/networkmanager-dmenu" = {
