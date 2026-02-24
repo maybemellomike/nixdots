@@ -5,7 +5,6 @@
 
 environment.systemPackages = with pkgs; [
     hugo
-    gimp
     cryptsetup
     wiki-tui
     obs-studio

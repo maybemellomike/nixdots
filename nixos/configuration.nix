@@ -15,6 +15,7 @@
 
   # Basic Setup.
   boot.loader.systemd-boot.enable = true;
+  system.nixos.variantName = "NixPadGNU/VimOS-Linux";
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "liam-tpad"; 
   networking.networkmanager.enable = true;

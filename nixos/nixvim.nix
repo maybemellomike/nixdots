@@ -14,6 +14,7 @@
     vimAlias = true;
     opts = {
       number = true;
+      splitbelow = true;
       relativenumber = true; 
       winborder = "rounded";
       shiftwidth = 3;
@@ -28,6 +29,13 @@
       spell = true;
       spelllang = "en_us";
       }; 
+    autoCmd = [
+      {
+     event = "TermOpen";
+     pattern = "*";
+     command = "setlocal nospell";
+       }
+      ];
       
     plugins = {
       lualine.enable = true;
@@ -155,6 +163,11 @@
       key = "<C-s>";
       mode = "n";
       action = ":! zathura %(echo % \| sed 's/tex$/pdf/') & disown <CR><CR>";
+      }
+      { # Vim Terminal
+      key = "<leader>tt";
+      mode = "n";
+      action = ":new | resize 15 | terminal<CR>";
       }
       { # Clipboard with Leader	
       key = "<C-y>";

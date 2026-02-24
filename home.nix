@@ -10,7 +10,7 @@
        source = ./config/user-dirs.dirs;
      };
      file.".config/waybar" = {
-       source = ./config/waybar/waybar_powerline;
+       source = ./config/waybar/waybar_modules;
        recursive = true;
      };
      file.".config/networkmanager-dmenu" = {
