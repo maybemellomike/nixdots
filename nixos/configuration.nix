@@ -24,6 +24,9 @@
   services.xserver.enable = true;
   services.libinput.enable = true;
   services.printing.enable = true;
+  environment.sessionVariables = {
+      NH_FLAKE = "/home/liam/dots/";
+  };
   users.users.liam = {
     isNormalUser = true;
     description = "liam";

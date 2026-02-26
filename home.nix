@@ -10,15 +10,11 @@
        source = ./config/user-dirs.dirs;
      };
      file.".config/waybar" = {
-       source = ./config/waybar/waybar_modules;
+       source = ./config/waybar/waybar_powerline;
        recursive = true;
      };
      file.".config/networkmanager-dmenu" = {
        source = ./config/networkmanager-dmenu;
-       recursive = true;
-     };
-     file.".config/kitty" = {
-       source = ./config/kitty;
        recursive = true;
      };
      file.".config/waypaper" = {
@@ -39,4 +35,12 @@
      };
   };
 
+programs.kitty = {
+   enable = true; 
+   extraConfig = ''
+      window_padding_width 8
+      draw_minimal_borders yes
+      confirm_os_window_close 0
+      '';
+   };
 }

@@ -3,9 +3,10 @@
 { imports = [inputs.stylix.nixosModules.stylix];
 
 stylix.enable = true; 
-stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
+stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
 stylix.targets.nixvim.enable = false;
 stylix.targets.plymouth.enable = false;
+stylix.opacity.terminal = 0.75;
 stylix.polarity = "dark";
   stylix.fonts = {
     sizes = {

@@ -5,6 +5,7 @@
 
 environment.systemPackages = with pkgs; [
     hugo
+    nh
     cryptsetup
     wiki-tui
     obs-studio
@@ -18,9 +19,10 @@ environment.systemPackages = with pkgs; [
     waypaper
     ripgrep
     hyprshot
+    hyprcursor
     bluetuith
-    kitty
     pciutils
+    ghostty
     gotop
     yazi
     fzf
