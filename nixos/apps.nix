@@ -22,7 +22,6 @@ environment.systemPackages = with pkgs; [
     hyprcursor
     bluetuith
     pciutils
-    ghostty
     gotop
     yazi
     fzf
