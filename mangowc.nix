@@ -98,6 +98,14 @@ bind=SUPER+ALT,l,exchange_client,right
 bind=SUPER+SHIFT,a,incgaps,1
 bind=SUPER+SHIFT,x,incgaps,-1
 
+#Volume and Brightness
+bind=NONE,XF86AudioRaiseVolume,spawn,amixer set Master 5%+ unmute
+bind=NONE,XF86AudioLowerVolume,spawn,amixer set Master 5%- unmute
+bind=NONE,XF86AudioMute,spawn,amixer set Master toggle o
+bind=NONE,XF86AudioMicMute,spawn,
+bind=NONE,XF86MonBrightnessUp,spawn,brightnessctl -d intel_backlight set +1000             
+bind=NONE,XF86MonBrightnessDown,spawn,brightnessctl -d intel_backlight set 1000-    
+
 # Caps lock remap
 autostart = setxkbmap -option ctrl:nocaps
 '';
