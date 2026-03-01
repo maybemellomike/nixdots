@@ -9,11 +9,17 @@ final: prev:
         modules = [ 
 	../nixos/configuration.nix 
           final.inputs.home-manager.nixosModules.home-manager
+	  final.inputs.mangowc.nixosModules.mango
 	   {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 	  home-manager.backupFileExtension = "backup";
-          home-manager.users.liam = import ../home.nix;
+          home-manager.users.liam = {
+	     imports = [ 
+	     ../home.nix
+	     final.inputs.mangowc.hmModules.mango
+	     ];
+	    };
 	   }
 	];
         specialArgs = { inherit (final) inputs; };

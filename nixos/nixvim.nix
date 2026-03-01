@@ -140,7 +140,7 @@
       action.__raw = "function() vim.lsp.completion.enable() end, opts";
       }
       { # Zen
-      key = "<C-g>";
+      key = "<leader>g";
       mode = "n";
       action = ":ZenMode<CR>";
       }

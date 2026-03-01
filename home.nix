@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+
+imports = [
+      ./mangowc.nix
+   ];
+
   home = {
      username = "liam";
      homeDirectory = "/home/liam";
@@ -10,7 +15,7 @@
        source = ./config/user-dirs.dirs;
      };
      file.".config/waybar" = {
-       source = ./config/waybar/waybar_powerline;
+       source = ./config/waybar/waybar_mango;
        recursive = true;
      };
      file.".config/networkmanager-dmenu" = {
@@ -41,6 +46,9 @@ programs.kitty = {
       window_padding_width 8
       draw_minimal_borders yes
       confirm_os_window_close 0
+      macos_titlebar_color background
       '';
    };
+
+
 }
