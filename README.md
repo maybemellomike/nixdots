@@ -7,6 +7,10 @@ Boi oh boi 'tis been ages since I've bothered to figure out how to get back on h
 Gone are the days of XMonad and XMobar. Since realizing I could try Wayland, and really my computer is pretty simply used but a few of my 20+ year experience on Linux pain points were due to Xorg, I gave Hyprland a try and have found the quality of life for normal desktop use to be worth the hassle of switching window managers. That being said, I am MangoWC curious as it has the ability to add in a few things from XMonad I had configured which I grew used to. 
 ![](scrot/scrot.png)
 
+## MangoWC?
+
+My gripes with Hyprland are mainly from the fact its more manual than I'm used to. Years and years on AwesomeWM and Xmonad have left me wanting more from Hyprland's layouts and whatnot. I think MangoWC's implementation of the best DWM patches and whatnot have made it the choice for me, but I'm not sure yet so we are working with some strange combo of the two. The screenshots apply still though as Stylix and my Waybar configuration are transportable so really it all looks the same. The difference all lies in the functionality when on the keyboard.
+
 ## Now with Flakes!
 
 With much assistance from [Evan over here](https://github.com/evanrelf) I've now migrated over to a flakes based setup. Not entirely sure how it's working necessarily but at least it is working and I know enough to reproduce it!
