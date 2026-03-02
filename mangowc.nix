@@ -14,6 +14,7 @@ gappih=10
 gappiv=10
 gappoh=10
 gappov=10
+circle_layout=tile,scroller,center_tile
 
 #blur
 blur=2 
@@ -27,13 +28,14 @@ blur_params_contrast=0.9
 blur_params_saturation=1.2
 
 #shadows
-shadows = 1
-layer_shadows = 1
-shadow_only_floating = 1
-shadows_size = 10
-shadows_blur = 15
-shadows_position_x = 0
-shadows_position_y = 0
+shadows=0
+layer_shadows=5
+shadow_only_floating=1
+shadows_size=10
+shadows_blur=15
+shadows_position_x=0
+shadows_position_y=0
+shadowscolor=0x000000ff
 
 border_radius=5
 no_radius_when_single=0
@@ -48,7 +50,7 @@ terminal = kitty
 exec-once = waybar
 exec-once = waypaper --restore
 exec-once = hypridle
-mouse_natural_scrolling=0
+mouse_natural_scrolling=1
 
 # Animation Configuration(support type:zoom,slide)
 # tag_animation_direction: 1-horizontal,0-vertical
@@ -63,10 +65,10 @@ zoom_initial_ratio=0.3
 zoom_end_ratio=0.8
 fadein_begin_opacity=0.5
 fadeout_begin_opacity=0.8
-animation_duration_move=500
-animation_duration_open=400
-animation_duration_tag=350
-animation_duration_close=800
+animation_duration_move=300
+animation_duration_open=200
+animation_duration_tag=250
+animation_duration_close=400
 animation_duration_focus=0
 animation_curve_open=0.2,0.8,0.2,1
 animation_curve_move=0.2,0.8,0.2,1
@@ -75,6 +77,7 @@ animation_curve_close=0.2,0.8,0.2,1
 animation_curve_focus=0.2,0.8,0.2,1
 animation_curve_opafadeout=0.2,0.8,0.2,1
 animation_curve_opafadein=0.2,0.8,0.2,1
+
 # Scroller Layout Setting
 scroller_structs=20
 scroller_default_proportion=0.8
@@ -92,6 +95,7 @@ bind=SUPER+SHIFT,q,exit
 bind=SUPER+SHIFT,c,killclient
 bind=SUPER+SHIFT,n,switch_layout
 bind=SUPER,h,resizewin,-30 0
+bind=SUPER,p,spawn,hyprshot -m region -o ~/pix/scrots/
 bind=SUPER,l,resizewin, +30, +0
 
 bind = SUPER+SHIFT,g,spawn,pkill waybar 
