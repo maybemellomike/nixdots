@@ -39,6 +39,7 @@
       
     plugins = {
       lualine.enable = true;
+      nvim-surround.enable = true;
       auto-pairs.enable = true;
       telescope.enable = true; 
       transparent.enable = true;
@@ -74,33 +75,63 @@
 
 
     keymaps = [
-      { # easy writing
-      key = "<Leader>w";
-      mode = "n";
-      action = ":write<CR>";
-      }
-      { # easy quitting
-      key = "<Leader>q";
-      mode = "n";
-      action = ":quit<CR>";
-      }
       { # Oil
       key = "<Leader>e";
       mode = "n";
       action = ":Oil --float<CR>";
       }
-      { # Telescope files
-      key = "<Leader>f";
+      { # kill window
+      key = "<Leader>ww";
       mode = "n";
-      action = ":Telescope find_files<CR>";
+      action = ":w<CR>";
+      }
+      { # kill window
+      key = "<Leader>wx";
+      mode = "n";
+      action = ":q<CR>";
+      }
+      { # horizontal split
+      key = "<Leader>w-";
+      mode = "n";
+      action = ":split<CR>";
+      }
+      { # Window delete
+      key = "<Leader>wd";
+      mode = "n";
+      action = ":q<CR>";
       }
       { # Virt split
-      key = "<Leader>vs";
+      key = "<Leader>w/";
       mode = "n";
       action = ":vsp<CR>";
       }
+      { # Move to split right
+      key = "<Leader>wh";
+      mode = "n";
+      action = ":wincmd h<CR>";
+      }
+      { # Move to split left
+      key = "<Leader>wl";
+      mode = "n";
+      action = ":wincmd l<CR>";
+      }
+      { # Move to split up
+      key = "<Leader>wk";
+      mode = "n";
+      action = ":wincmd k<CR>";
+      }
+      { # Move to split down
+      key = "<Leader>wj";
+      mode = "n";
+      action = ":wincmd j<CR>";
+      }
+      { # Telescope files
+      key = "<Leader>ff";
+      mode = "n";
+      action = ":Telescope find_files<CR>";
+      }
       { # Telescope Help
-      key = "<Leader>h";
+      key = "<Leader>fh";
       mode = "n";
       action = ":Telescope help_tags<CR>";
       }
