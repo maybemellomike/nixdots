@@ -8,13 +8,24 @@
   settings = ''
 
 # General settings
+xkb_rules_options=caps:ctrl
+xkb_rules_options=ctrl:nocaps
+repeat_rate=45
+repeat_delay=250
+mod = SUPER
+terminal = kitty
+exec-once = waybar
+exec-once = waypaper --restore
+exec-once = hypridle
+mouse_natural_scrolling=1
 
 #gaps
 gappih=10
 gappiv=10
-gappoh=10
-gappov=10
+gappoh=13
+gappov=13
 circle_layout=tile,scroller,center_tile
+windowrule=focused_opacity:0.9,unfocused_opacity:0.8,appid:qutebrowser
 
 #blur
 blur=2 
@@ -28,9 +39,9 @@ blur_params_contrast=0.9
 blur_params_saturation=1.2
 
 #shadows
-shadows=0
-layer_shadows=5
-shadow_only_floating=1
+shadows=1
+layer_shadows=4
+shadow_only_floating=0
 shadows_size=10
 shadows_blur=15
 shadows_position_x=0
@@ -42,15 +53,8 @@ no_radius_when_single=0
 no_border_when_single=0
 borderpx=0
 focused_opacity=1.0
-unfocused_opacity=0.8
+unfocused_opacity=0.9
 
-mod = SUPER
-terminal = kitty
-
-exec-once = waybar
-exec-once = waypaper --restore
-exec-once = hypridle
-mouse_natural_scrolling=1
 
 # Animation Configuration(support type:zoom,slide)
 # tag_animation_direction: 1-horizontal,0-vertical
@@ -90,13 +94,15 @@ scroller_proportion_preset=0.5,0.8,1.0
 # Keybindings
 bind=SUPER+SHIFT,r,reload_config
 bind = SUPER,return,spawn,kitty
+bind = SUPER,n,spawn,networkmanager_dmenu -l 30 -i
 bind=SUPER+SHIFT,RETURN,swapnext
+bind=SUPER+SHIFT,l,hyprlock
 bind=SUPER+SHIFT,q,exit
 bind=SUPER+SHIFT,c,killclient
 bind=SUPER+SHIFT,n,switch_layout
 bind=SUPER,h,resizewin,-30 0
-bind=SUPER,p,spawn,hyprshot -m region -o ~/pix/scrots/
 bind=SUPER,l,resizewin, +30, +0
+bind=SUPER,p,spawn,hyprshot -m region -o ~/pix/scrots/
 
 bind = SUPER+SHIFT,g,spawn,pkill waybar 
 bind = SUPER+SHIFT,b,spawn,waybar 
@@ -114,6 +120,7 @@ bind=SUPER+SHIFT,j,focusdir,down
 
 #tags view
 bind=SUPER,1,view,1,0
+bind=SUPER+ALT,1,comboview,1
 bind=SUPER,2,view,2,0
 bind=SUPER,3,view,3,0
 bind=SUPER,4,view,4,0
@@ -153,8 +160,6 @@ bind=NONE,XF86AudioMicMute,spawn,
 bind=NONE,XF86MonBrightnessUp,spawn,brightnessctl -d intel_backlight set +1000             
 bind=NONE,XF86MonBrightnessDown,spawn,brightnessctl -d intel_backlight set 1000-    
 
-# Caps lock remap
-autostart = setxkbmap -option ctrl:nocaps
 '';
   };
 }

@@ -7,6 +7,7 @@ environment.systemPackages = with pkgs; [
     hugo
     nh
     cryptsetup
+    emacs
     wiki-tui
     obs-studio
     nix-search-cli
