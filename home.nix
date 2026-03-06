@@ -26,10 +26,6 @@ imports = [
        source = ./config/waypaper;
        recursive = true;
      };
-     file.".config/hypr" = {
-       source = ./config/hypr;
-       recursive = true;
-     };
      file.".config/qutebrowser" = {
        source = ./config/qutebrowser;
        recursive = true;
