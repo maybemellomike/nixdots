@@ -3,8 +3,8 @@
 { imports = [inputs.stylix.nixosModules.stylix];
 
 stylix.enable = true; 
-stylix.image = ./wall.jpg;
-#stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+stylix.image = ./foret.jpg;
+#stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
 stylix.targets.nixvim.enable = false;
 stylix.targets.plymouth.enable = false;
 stylix.opacity.terminal = 0.75;
