@@ -18,6 +18,10 @@ imports = [
        source = ./config/waybar/waybar_mango;
        recursive = true;
      };
+     file.".config/hypr" = {
+       source = ./config/hypr;
+       recursive = true;
+     };
      file.".config/networkmanager-dmenu" = {
        source = ./config/networkmanager-dmenu;
        recursive = true;
