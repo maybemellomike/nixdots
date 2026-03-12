@@ -1,0 +1,217 @@
+{ inputs, ...}:
+# NVim on Nix yo, 'tis NixVim
+
+  { imports = [inputs.nixvim.nixosModules.nixvim];
+
+  programs.nixvim = {
+    enable = true;
+    colorschemes = {
+       gruvbox-material.enable = true;
+    };
+    globals.mapleader = " ";
+    viAlias = true;
+    defaultEditor = true;
+    vimAlias = true;
+    opts = {
+      number = true;
+      splitbelow = true;
+      relativenumber = true; 
+      winborder = "rounded";
+      shiftwidth = 3;
+      cursorline = true;
+      signcolumn = "yes"; 
+      ignorecase = true; 
+      termguicolors = true;
+      scrolloff = 5;
+      smartindent = true;
+      swapfile = false;
+      linebreak = true;
+      spell = true;
+      spelllang = "en_us";
+      }; 
+    autoCmd = [
+      {
+     event = "TermOpen";
+     pattern = "*";
+     command = "setlocal nospell";
+       }
+      ];
+      
+    plugins = {
+      lualine.enable = true;
+      nvim-surround.enable = true;
+      auto-pairs.enable = true;
+      telescope.enable = true; 
+      transparent.enable = true;
+      oil.enable = true;
+      vimtex.enable = true;
+      treesitter.enable = true;
+      typst-vim.enable = true;
+      typst-preview.enable = true;
+      lsp.enable = true;
+      web-devicons.enable = true;
+      zen-mode = {
+        enable = true;
+        settings = { 
+            window = {
+              backdrop = 1;
+              height = 0.9;
+              width = 0.8;
+            };
+         };
+        };
+      };
+
+#LSP
+    lsp.inlayHints.enable = true;
+    lsp.servers = {
+        nixd.enable = true;
+        nil_ls.enable = true;
+        tinymist.enable = true;
+        texlab.enable = true;
+        lua_ls.enable = true;
+        css_ls.enable = true;
+        marksman.enable = true;
+      };
+
+
+    keymaps = [
+      { # Oil
+      key = "<Leader>e";
+      mode = "n";
+      action = ":Oil --float<CR>";
+      }
+      { # kill window
+      key = "<Leader>ww";
+      mode = "n";
+      action = ":w<CR>";
+      }
+      { # kill window
+      key = "<Leader>wx";
+      mode = "n";
+      action = ":q<CR>";
+      }
+      { # horizontal split
+      key = "<Leader>w-";
+      mode = "n";
+      action = ":split<CR>";
+      }
+      { # Window delete
+      key = "<Leader>wd";
+      mode = "n";
+      action = ":q<CR>";
+      }
+      { # Virt split
+      key = "<Leader>w/";
+      mode = "n";
+      action = ":vsp<CR>";
+      }
+      { # Move to split right
+      key = "<Leader>wh";
+      mode = "n";
+      action = ":wincmd h<CR>";
+      }
+      { # Move to split left
+      key = "<Leader>wl";
+      mode = "n";
+      action = ":wincmd l<CR>";
+      }
+      { # Move to split up
+      key = "<Leader>wk";
+      mode = "n";
+      action = ":wincmd k<CR>";
+      }
+      { # Move to split down
+      key = "<Leader>wj";
+      mode = "n";
+      action = ":wincmd j<CR>";
+      }
+      { # Telescope files
+      key = "<Leader>ff";
+      mode = "n";
+      action = ":Telescope find_files<CR>";
+      }
+      { # Telescope Help
+      key = "<Leader>fh";
+      mode = "n";
+      action = ":Telescope help_tags<CR>";
+      }
+      { # Telescope Buffers
+      key = "<Leader>b";
+      mode = "n";
+      action = ":Telescope buffers<CR>";
+      }
+      { # Telescope Registers
+      key = "<Leader>y";
+      mode = "n";
+      action = ":Telescope registers<CR>";
+      }
+      { # Telescope Grep String
+      key = "<Leader>ps";
+      mode = "n";
+      action = ":Telescope grep_string<CR>";
+      }
+      { # Language Servers
+      key = "<Leader>ls";
+      mode = "n";
+      action = ":LspStart<CR>";
+      }
+      { # Hover?
+      key = "<Leader>lh";
+      mode = "n";
+      action.__raw = "function() vim.lsp.buf.hover() end, opts";
+      }
+      { # Hover?
+      key = "<Leader>lf";
+      mode = "n";
+      action.__raw = "function() vim.lsp.buf.format() end, opts";
+      }
+      { # Autocomplete?
+      key = "<C-Space>";
+      mode = "i";
+      action.__raw = "function() vim.lsp.completion.enable() end, opts";
+      }
+      { # Zen
+      key = "<leader>g";
+      mode = "n";
+      action = ":ZenMode<CR>";
+      }
+      { # Limelight
+      key = "<C-l>";
+      mode = "n";
+      action = ":Twilight<CR>";
+      }
+      { # Typst Watch
+      key = "<leader>p";
+      mode = "n";
+      action = ":TypstWatch <CR>";
+      }
+      { # LateX Compile
+      key = "<C-i>";
+      mode = "n";
+      action = ":! pdflatex %<CR><CR>";
+      }
+      { # LateX Preview
+      key = "<C-s>";
+      mode = "n";
+      action = ":! zathura %(echo % \| sed 's/tex$/pdf/') & disown <CR><CR>";
+      }
+      { # Vim Terminal
+      key = "<leader>tt";
+      mode = "n";
+      action = ":new | resize 15 | terminal<CR>";
+      }
+      { # Clipboard with Leader	
+      key = "<C-y>";
+      mode = "v";
+      action = "\"+y";
+      }
+      { # Clipboard with Leader	
+      key = "<C-p>";
+      mode = "v";
+      action = "\"+p";
+      }
+      ];
+  };
+
+}
