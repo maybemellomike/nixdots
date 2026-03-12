@@ -10,7 +10,7 @@
     };
     globals.mapleader = " ";
     viAlias = true;
-    defaultEditor = false;
+    defaultEditor = true;
     vimAlias = true;
     opts = {
       number = true;

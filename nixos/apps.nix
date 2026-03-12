@@ -6,7 +6,7 @@
 environment.systemPackages = with pkgs; [
     hugo
     nh
-    enchant
+    hunspell
     hunspellDicts.en-us
     cryptsetup
     wiki-tui
