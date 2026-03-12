@@ -161,6 +161,11 @@
       mode = "n";
       action.__raw = "function() vim.lsp.buf.hover() end, opts";
       }
+      { # Diagonostics?
+      key = "<Leader>ld";
+      mode = "n";
+      action.__raw = "<cmd>lua vim.diagnostics.open_float() <CR>";
+      }
       { # Hover?
       key = "<Leader>lf";
       mode = "n";

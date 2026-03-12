@@ -6,6 +6,7 @@ imports = [
       ./mangowc.nix
    ];
 
+
   home = {
      username = "liam";
      homeDirectory = "/home/liam";
