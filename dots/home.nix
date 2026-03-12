@@ -52,6 +52,11 @@ xdg.desktopEntries.emacs = {
   mimeType = [ "text/plain" ];
 };
 
+home.sessionVariables = {
+  EDITOR = "emacsclient -t";
+  VISUAL = "emacsclient -c -a emacs";
+};
+
 programs.kitty = {
    enable = true; 
    extraConfig = ''
