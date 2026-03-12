@@ -41,17 +41,6 @@ imports = [
      };
   };
 
-  
-xdg.desktopEntries.emacs = {
-  name = "Emacs";
-  genericName = "Text Editor";
-  exec = "emacsclient -c -a emacs %F";
-  icon = "emacs";
-  terminal = false;
-  categories = [ "Development" "TextEditor" "Utility" ];
-  mimeType = [ "text/plain" ];
-};
-
 programs.kitty = {
    enable = true; 
    extraConfig = ''
