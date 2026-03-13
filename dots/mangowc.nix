@@ -17,7 +17,7 @@ terminal = kitty
 exec-once = waybar
 exec-once = waypaper --restore
 exec-once = hypridle
-mouse_natural_scrolling=1
+mouse_natural_scrolling=0
 
 #gaps
 gappih=10
