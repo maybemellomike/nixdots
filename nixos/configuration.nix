@@ -67,7 +67,7 @@
   programs.hyprlock.enable = true;
   programs.mangowc.enable = true;
   services.emacs = {
-    enable = true;
+    enable = false;
     install = true;
     };
 

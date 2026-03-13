@@ -41,11 +41,12 @@ imports = [
      };
   };
 
-services.emacs = {
+ services.emacs = {
+  enable = true;        # This starts the user-level daemon
   defaultEditor = true;
-  extraOptions = [ "--load" "${config.home.homeDirectory}/.emacs" ];
-};
-  
+  client.enable = true;
+}; 
+
 xdg.desktopEntries.emacs = {
   name = "Emacs";
   genericName = "Text Editor";
@@ -56,10 +57,10 @@ xdg.desktopEntries.emacs = {
   mimeType = [ "text/plain" ];
 };
 
-home.sessionVariables = {
-  EDITOR = "emacsclient -t";
-  VISUAL = "emacsclient -c -a emacs";
-};
+# home.sessionVariables = {
+# ##  EDITOR = "emacsclient -t";
+  # VISUAL = "emacsclient -c -a emacs";
+# };
 
 programs.kitty = {
    enable = true; 

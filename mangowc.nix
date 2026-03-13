@@ -152,8 +152,8 @@ bind=SUPER+ALT,h,exchange_client,left
 bind=SUPER+ALT,l,exchange_client,right
 
 # Gaps
-bind=SUPER+SHIFT,a,incgaps,1
-bind=SUPER+SHIFT,x,incgaps,-1
+bind=SUPER+SHIFT,a,incgaps,5
+bind=SUPER+SHIFT,x,incgaps,-5
 
 #Volume and Brightness
 bind=NONE,XF86AudioRaiseVolume,spawn,amixer set Master 5%+ unmute
