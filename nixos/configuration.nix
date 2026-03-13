@@ -62,16 +62,14 @@
         ];
     };
   services.displayManager.ly.enable = true;
-  services.emacs = {
-    enable = true;
-    install = true;
-    startWithGraphical = true;
-    defaultEditor = true;
-    };
   programs.hyprland.enable = true;
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
   programs.mangowc.enable = true;
+  services.emacs = {
+    enable = true;
+    install = true;
+    };
 
  # Configure keymap in X11
   services.xserver.xkb = {

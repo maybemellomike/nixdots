@@ -41,6 +41,10 @@ imports = [
      };
   };
 
+services.emacs = {
+  defaultEditor = true;
+  extraOptions = [ "--load" "${config.home.homeDirectory}/.emacs" ];
+};
   
 xdg.desktopEntries.emacs = {
   name = "Emacs";
