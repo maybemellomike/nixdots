@@ -14,13 +14,13 @@ stylix.polarity = "dark";
       applications = 12;
     };
     serif = {
-      package = pkgs.newcomputermodern;
-      name = "New Computer Modern";
+      package = pkgs.aporetic;
+      name = "Aporetic Serif";
     };
 
      sansSerif = {
        package = pkgs.ubuntu-sans;
-       name = "Ubuntu Sans";
+       name = "Aporetic Sans";
      };
 
      monospace = {

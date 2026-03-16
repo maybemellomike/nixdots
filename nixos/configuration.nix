@@ -1,5 +1,5 @@
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -11,6 +11,7 @@
       ./zsh.nix
       ./tmux.nix
       ./nixvim.nix
+      "${inputs.ewm}/nix/service.nix"
     ];
 
   # Basic Setup.
@@ -45,11 +46,11 @@
           General = {
           Experimental = true;
           FastConnectable = true;
-        };
-    Policy = {
-      AutoEnable = true;
-    };
-  };
+          };
+        Policy = {
+        AutoEnable = true;
+            };
+          };
         };
 
   # Graphics
@@ -70,6 +71,12 @@
     enable = false;
     install = true;
     };
+programs.ewm = {
+  enable = true;
+  emacsPackage = pkgs.emacs-pgtk.pkgs.withPackages (epkgs: [
+    config.programs.ewm.ewmPackage
+  ]);
+};
 
  # Configure keymap in X11
   services.xserver.xkb = {
@@ -86,9 +93,9 @@
     security.sudo.enable = false;
     security.doas.enable = true;
     security.doas.extraRules = [{
-	users = [ "liam" ];
-	keepEnv = true;
-        persist = true;
+        users = [ "liam" ];
+        keepEnv = true;
+                persist = true;
      }];
 
  # power
@@ -125,6 +132,7 @@ fonts.packages = with pkgs; [
       ubuntu-sans-mono
       fantasque-sans-mono
       cm_unicode
+      aporetic
         ];
 
  # Don't change this lol

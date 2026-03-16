@@ -42,7 +42,7 @@ imports = [
   };
 
  services.emacs = {
-  enable = true;        # This starts the user-level daemon
+  enable = false;    #change to true when removing ewm # This starts the user-level daemon
   defaultEditor = true;
   client.enable = true;
 }; 

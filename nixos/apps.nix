@@ -14,9 +14,12 @@ environment.systemPackages = with pkgs; [
     obs-studio
     nix-search-cli
     networkmanager_dmenu
+    wl-clipboard
     wofi
     waybar
     mpv
+    xorg.xrandr
+    xorg.xsetroot
     qutebrowser
     swaybg
     waypaper
