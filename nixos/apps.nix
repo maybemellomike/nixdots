@@ -5,6 +5,7 @@
 
 environment.systemPackages = with pkgs; [
     hugo
+    zotero
     nh
     hunspell
     enchant
@@ -13,6 +14,7 @@ environment.systemPackages = with pkgs; [
     wiki-tui
     obs-studio
     nix-search-cli
+    sqlite
     networkmanager_dmenu
     wl-clipboard
     wofi
