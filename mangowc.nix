@@ -24,7 +24,7 @@ gappih=10
 gappiv=10
 gappoh=13
 gappov=13
-circle_layout=tile,scroller,center_tile
+circle_layout=tile,scroller
 windowrule=focused_opacity:0.9,unfocused_opacity:0.8,appid:qutebrowser
 windowrule=focused_opacity:0.7,unfocused_opacity:0.6,appid:emacs
 
