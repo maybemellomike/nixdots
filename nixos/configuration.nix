@@ -11,6 +11,7 @@
       ./zsh.nix
       ./tmux.nix
       ./nixvim.nix
+      ./harden.nix
       "${inputs.ewm}/nix/service.nix"
     ];
 
