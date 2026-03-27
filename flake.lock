@@ -68,27 +68,6 @@
         "type": "github"
       }
     },
-    "ewm": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1773334781,
-        "narHash": "sha256-e2GH7/VeedXEEsRJ1KOLVdee2bG3+EVCJij5JAYEBrI=",
-        "ref": "master",
-        "rev": "d17ce7bcfe4f713db025d587027db9884995e8d1",
-        "revCount": 380,
-        "type": "git",
-        "url": "https://codeberg.org/ezemtsov/ewm.git"
-      },
-      "original": {
-        "ref": "master",
-        "type": "git",
-        "url": "https://codeberg.org/ezemtsov/ewm.git"
-      }
-    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -324,7 +303,6 @@
     },
     "root": {
       "inputs": {
-        "ewm": "ewm",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "mangowc": "mangowc",

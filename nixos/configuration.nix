@@ -11,8 +11,7 @@
       ./zsh.nix
       ./tmux.nix
       ./nixvim.nix
-      ./harden.nix
-      "${inputs.ewm}/nix/service.nix"
+      #./harden.nix
     ];
 
   # Basic Setup.
@@ -72,12 +71,6 @@
     enable = false;
     install = true;
     };
-programs.ewm = {
-  enable = true;
-  emacsPackage = pkgs.emacs-pgtk.pkgs.withPackages (epkgs: [
-    config.programs.ewm.ewmPackage
-  ]);
-};
 
  # Configure keymap in X11
   services.xserver.xkb = {

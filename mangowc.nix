@@ -96,6 +96,7 @@ scroller_proportion_preset=0.5,0.8,1.0
 bind=SUPER+SHIFT,r,reload_config
 bind = SUPER,return,spawn,kitty
 bind = SUPER,n,spawn,networkmanager_dmenu -l 30 -i
+bind = SUPER,m,spawn,emacsclient -c
 bind=SUPER+SHIFT,RETURN,swapnext
 bind=SUPER+ALT,l,hyprlock
 bind=SUPER+SHIFT,q,exit

@@ -25,10 +25,6 @@
      url = "github:nix-community/home-manager";
      inputs.nixpkgs.follows = "nixpkgs";
     };
-  ewm = {
-    url = "git+https://codeberg.org/ezemtsov/ewm.git?ref=master";
-    inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs:

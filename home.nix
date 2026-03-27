@@ -41,26 +41,32 @@ imports = [
      };
   };
 
- services.emacs = {
-  enable = false;    #change to true when removing ewm # This starts the user-level daemon
-  defaultEditor = true;
-  client.enable = true;
-}; 
-
-xdg.desktopEntries.emacs = {
-  name = "Emacs";
-  genericName = "Text Editor";
-  exec = "emacsclient -c -a emacs %F";
-  icon = "emacs";
-  terminal = false;
-  categories = [ "Development" "TextEditor" "Utility" ];
-  mimeType = [ "text/plain" ];
+programs.emacs = {
+  enable = true;
 };
 
-# home.sessionVariables = {
-# ##  EDITOR = "emacsclient -t";
-  # VISUAL = "emacsclient -c -a emacs";
-# };
+services.emacs = {
+  enable = true;
+  defaultEditor = true;
+  client.enable = true;
+  startWithUserSession = "graphical";
+};
+
+home.activation.tangleEmacsConfig =
+  config.lib.dag.entryAfter ["writeBoundary"] ''
+    if [ -f "$HOME/.emacs.d/config.org" ]; then
+      ${pkgs.emacs}/bin/emacs --batch \
+        --eval "(require 'ob-tangle)" \
+        --eval "(org-babel-tangle-file \
+          \"$HOME/.emacs.d/config.org\")"
+    fi
+  '';
+
+home.packages = with pkgs; [
+    aspell
+    aspellDicts.en
+    aspellDicts.en-computers
+];
 
 programs.kitty = {
    enable = true; 

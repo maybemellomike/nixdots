@@ -7,9 +7,6 @@ environment.systemPackages = with pkgs; [
     hugo
     zotero
     nh
-    hunspell
-    enchant
-    hunspellDicts.en-us
     cryptsetup
     wiki-tui
     obs-studio
