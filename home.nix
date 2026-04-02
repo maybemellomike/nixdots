@@ -47,7 +47,7 @@ programs.emacs = {
 
 services.emacs = {
   enable = true;
-  defaultEditor = true;
+  defaultEditor = false;
   client.enable = true;
   startWithUserSession = "graphical";
 };
