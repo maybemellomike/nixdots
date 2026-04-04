@@ -5,17 +5,15 @@
     enable = true;
 
 
-  settings = ''
+  extraConfig = ''
 
 # General settings
 xkb_rules_options=caps:ctrl
 xkb_rules_options=ctrl:nocaps
 repeat_rate=45
 repeat_delay=250
-mod = SUPER
-terminal = kitty
 exec-once = waybar
-exec-once = waypaper --restore
+exec-once = waypaper --random
 exec-once = hypridle
 mouse_natural_scrolling=0
 
@@ -97,9 +95,7 @@ bind=SUPER+SHIFT,r,reload_config
 bind = SUPER,return,spawn,kitty
 bind = SUPER,n,spawn,networkmanager_dmenu -l 30 -i
 bind = SUPER,m,spawn,emacsclient -c
-bind=SUPER+SHIFT,RETURN,swapnext
-bind=SUPER+ALT,l,hyprlock
-bind=SUPER+SHIFT,q,exit
+bind=SUPER+ALT,l,spawn,hyprlock
 bind=SUPER+SHIFT,f,togglefullscreen
 bind=SUPER,s,toggle_scratchpad
 bind=SUPER+SHIFT,c,killclient
