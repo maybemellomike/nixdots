@@ -10,6 +10,8 @@ environment.systemPackages = with pkgs; [
     cryptsetup
     wiki-tui
     obs-studio
+    tor
+    tor-browser
     nix-search-cli
     sqlite
     networkmanager_dmenu

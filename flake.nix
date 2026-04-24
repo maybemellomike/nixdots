@@ -1,3 +1,5 @@
+# dots/flake.nix
+
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";

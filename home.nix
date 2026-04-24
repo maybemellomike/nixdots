@@ -1,3 +1,5 @@
+# dots/home.nix
+
 { config, pkgs, ... }:
 
 {

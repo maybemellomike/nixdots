@@ -1,3 +1,5 @@
+# dots/overlays/nixos-configuration.nix
+
 final: prev:
 
 {

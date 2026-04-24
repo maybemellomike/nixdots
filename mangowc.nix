@@ -1,3 +1,4 @@
+# dots/mango.nix
 { config, pkgs, lib, ... }:
 
 {

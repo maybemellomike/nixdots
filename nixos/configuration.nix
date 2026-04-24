@@ -1,3 +1,4 @@
+# dots/nixos/configuration.nix
 
 { config, pkgs, inputs, ... }:
 
