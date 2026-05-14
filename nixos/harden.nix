@@ -215,19 +215,31 @@
         UMask = "0077";
         };
     };
-systemd.services.systemd-logind = {
-  serviceConfig = {
-    NoNewPrivileges = true;
-    ProtectHostname = true;
-    ProtectKernelTunables = true;
-    ProtectKernelModules = true;
-    ProtectKernelLogs = true;
-    ProtectControlGroups = true;
-    LockPersonality = true;
-    RestrictSUIDSGID = true;
-    RestrictNamespaces = true;
-    SystemCallArchitectures = "native";
-    UMask = "0077";
-  };
-};
+    systemd.services.systemd-logind = {
+      serviceConfig = {
+        NoNewPrivileges = true;
+        ProtectHostname = true;
+        ProtectKernelTunables = true;
+        ProtectKernelModules = true;
+        ProtectKernelLogs = true;
+        ProtectControlGroups = true;
+        LockPersonality = true;
+        RestrictSUIDSGID = true;
+        RestrictNamespaces = true;
+        SystemCallArchitectures = "native";
+        UMask = "0077";
+      };
+    };
+    systemd.services.systemd-udevd = {
+      serviceConfig = {
+        NoNewPrivileges = true;
+        ProtectHostname = true;
+        ProtectKernelLogs = true;
+        LockPersonality = true;
+        RestrictRealtime = true;
+        RestrictSUIDSGID = true;
+        SystemCallArchitectures = "native";
+        UMask = "0077";
+      };
+    };
 }
