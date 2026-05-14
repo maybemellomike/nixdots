@@ -12,7 +12,7 @@
       ./zsh.nix
       ./tmux.nix
       ./nixvim.nix
-      #./harden.nix
+      ./harden.nix
     ];
 
   # Basic Setup.
