@@ -109,6 +109,9 @@
       ProtectHome = true;
       PrivateTmp = true;
       UMask = "0077";
+      RestrictSUIDSGID = true;
+      LockPersonality = true;
+      ProtectHostname = true;
     };
   };
 
@@ -190,4 +193,27 @@
       UMask = "0077";
     };
   };
+    systemd.services.systemd-timesyncd = {
+    serviceConfig = {
+        NoNewPrivileges = true;
+        ProtectSystem = "strict";
+        ProtectHome = true;
+        ProtectHostname = true;
+        ProtectKernelTunables = true;
+        ProtectKernelModules = true;
+        ProtectKernelLogs = true;
+        ProtectControlGroups = true;
+        ProtectClock = false;      # needs clock access — this is its whole job
+        PrivateTmp = true;
+        PrivateDevices = true;
+        PrivateUsers = true;
+        LockPersonality = true;
+        RestrictRealtime = true;
+        RestrictSUIDSGID = true;
+        RestrictNamespaces = true;
+        SystemCallArchitectures = "native";
+        UMask = "0077";
+    };
+    };
+
 }
