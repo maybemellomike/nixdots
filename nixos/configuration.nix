@@ -55,6 +55,7 @@
   # Networking
   networking.hostName = "liam-tpad"; 
   networking.networkmanager.enable = true;
+  networking.stevenblack.enable = true;
   # Encrypted DNS via systemd-resolved with DNS-over-TLS
   services.resolved = {
     enable = true;
@@ -75,13 +76,13 @@
     networking.networkmanager.wifi.macAddress = "random";
     networking.networkmanager.ethernet.macAddress = "random";
 
-  # Firewall
-networking.firewall = {
-  enable = true;
-  allowedTCPPorts = [ ];    # add ports only as needed e.g. [ 22 ] for SSH
-  allowedUDPPorts = [ ];
-  logRefusedConnections = true;
-};
+  ## Firewall
+#networking.firewall = {
+  #enable = true;
+  #allowedTCPPorts = [ ];    # add ports only as needed e.g. [ 22 ] for SSH
+  #allowedUDPPorts = [ ];
+  #logRefusedConnections = true;
+#};
     
   # Graphics
   hardware.graphics = {

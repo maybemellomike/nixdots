@@ -1,6 +1,14 @@
 { config, pkgs, lib, ... }:
 {
-  # Kernel network hardening
+  # Firewall
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ ];
+    allowedUDPPorts = [ ];
+    logRefusedConnections = true;
+  };
+
+  # Kernel sysctl hardening
   boot.kernel.sysctl = {
     # ICMP
     "net.ipv4.icmp_echo_ignore_broadcasts" = 1;
@@ -29,14 +37,157 @@
     "kernel.kexec_load_disabled" = 1;
   };
 
-  # Disable unused / attack-surface kernel modules
+  # Kernel module blacklist (your extended list, with my additions merged in)
   boot.blacklistedKernelModules = [
+    # Obscure network protocols
+    "ax25"
+    "netrom"
+    "rose"
     "dccp"
     "sctp"
     "rds"
     "tipc"
+    # Rare/unaudited filesystems
+    "adfs"
+    "affs"
+    "bfs"
+    "befs"
+    "cramfs"
+    "efs"
+    "erofs"
+    "exofs"
+    "freevxfs"
+    "f2fs"
+    "vivid"
+    "gfs2"
+    "ksmbd"
+    "nfsv4"
+    "nfsv3"
+    "cifs"
+    "nfs"
+    "jffs2"
+    "hfs"
+    "hfsplus"
+    "squashfs"
+    "udf"
+    "hpfs"
+    "jfs"
+    "minix"
+    "nilfs2"
+    "omfs"
+    "qnx4"
+    "qnx6"
+    "sysv"
   ];
 
   # Overwrite freed/allocated memory pages
   boot.kernelParams = [ "init_on_free=1" "init_on_alloc=1" ];
+
+  # systemd service hardening
+  systemd.services.systemd-journald = {
+    serviceConfig = {
+      UMask = "0077";
+      PrivateNetwork = true;
+      ProtectHostname = true;
+      ProtectKernelModules = true;
+    };
+  };
+
+  systemd.services.NetworkManager = {
+    serviceConfig = {
+      NoNewPrivileges = true;
+      ProtectClock = true;
+      ProtectKernelLogs = true;
+      ProtectControlGroups = true;
+      ProtectKernelModules = true;
+      SystemCallArchitectures = "native";
+      MemoryDenyWriteExecute = true;
+      ProtectProc = "invisible";
+      ProcSubset = "pid";
+      RestrictNamespaces = true;
+      ProtectKernelTunables = true;
+      ProtectHome = true;
+      PrivateTmp = true;
+      UMask = "0077";
+    };
+  };
+
+  systemd.services.NetworkManager-dispatcher = {
+    serviceConfig = {
+      ProtectHome = true;
+      ProtectKernelTunables = true;
+      ProtectKernelModules = true;
+      ProtectControlGroups = true;
+      ProtectKernelLogs = true;
+      ProtectHostname = true;
+      ProtectClock = true;
+      ProtectProc = "invisible";
+      ProcSubset = "pid";
+      PrivateDevices = true;
+      NoNewPrivileges = true;
+      LockPersonality = true;
+      RestrictRealtime = true;
+      RestrictSUIDSGID = true;
+      RestrictAddressFamilies = "AF_INET AF_INET6 AF_UNIX";
+      RestrictNamespaces = true;
+      SystemCallArchitectures = "native";
+      UMask = "0077";
+    };
+  };
+
+  systemd.services.systemd-ask-password-console = {
+    serviceConfig = {
+      ProtectSystem = "strict";
+      ProtectHome = true;
+      ProtectKernelTunables = true;
+      ProtectKernelModules = true;
+      ProtectControlGroups = true;
+      ProtectKernelLogs = true;
+      ProtectClock = true;
+      ProtectProc = "invisible";
+      ProcSubset = "pid";
+      PrivateTmp = true;
+      PrivateUsers = true;
+      PrivateDevices = false;
+      PrivateIPC = true;
+      MemoryDenyWriteExecute = true;
+      NoNewPrivileges = true;
+      LockPersonality = true;
+      RestrictRealtime = true;
+      RestrictSUIDSGID = true;
+      RestrictAddressFamilies = "AF_UNIX";
+      RestrictNamespaces = true;
+      SystemCallFilter = [ "@system-service" ];
+      SystemCallArchitectures = "native";
+      UMask = "0077";
+    };
+  };
+
+  systemd.services.systemd-ask-password-wall = {
+    serviceConfig = {
+      ProtectSystem = "strict";
+      ProtectHome = true;
+      ProtectKernelTunables = true;
+      ProtectKernelModules = true;
+      ProtectControlGroups = true;
+      ProtectKernelLogs = true;
+      ProtectClock = true;
+      ProtectProc = "invisible";
+      ProcSubset = "pid";
+      PrivateTmp = true;
+      PrivateUsers = true;
+      PrivateDevices = true;
+      PrivateIPC = true;
+      MemoryDenyWriteExecute = true;
+      NoNewPrivileges = true;
+      LockPersonality = true;
+      RestrictRealtime = true;
+      RestrictSUIDSGID = true;
+      RestrictAddressFamilies = "AF_UNIX";
+      RestrictNamespaces = true;
+      SystemCallFilter = [ "@system-service" ];
+      SystemCallArchitectures = "native";
+      UMask = "0077";
+    };
+  };
 }
