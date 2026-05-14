@@ -56,21 +56,33 @@
   networking.hostName = "liam-tpad"; 
   networking.networkmanager.enable = true;
   # Encrypted DNS via systemd-resolved with DNS-over-TLS
-services.resolved = {
-  enable = true;
-  settings = {
-    Resolve = {
-      DNS = "1.1.1.1#cloudflare-dns.com 1.0.0.1#cloudflare-dns.com 2606:4700:4700::1111#cloudflare-dns.com";
-      DNSOverTLS = "true";
-      DNSSEC = "true";
-      Domains = "~.";
-      FallbackDNS = "";
+  services.resolved = {
+    enable = true;
+    settings = {
+        Resolve = {
+        DNS = "1.1.1.1#cloudflare-dns.com 1.0.0.1#cloudflare-dns.com 2606:4700:4700::1111#cloudflare-dns.com";
+        DNSOverTLS = "true";
+        DNSSEC = "true";
+        Domains = "~.";
+        FallbackDNS = "";
+        LLMNR = "false";
+        MulticastDNS = "false";
+        };
     };
   };
+    networking.networkmanager.dns = "systemd-resolved";
+    networking.networkmanager.wifi.scanRandMacAddress = true;
+    networking.networkmanager.wifi.macAddress = "random";
+    networking.networkmanager.ethernet.macAddress = "random";
+
+  # Firewall
+networking.firewall = {
+  enable = true;
+  allowedTCPPorts = [ ];    # add ports only as needed e.g. [ 22 ] for SSH
+  allowedUDPPorts = [ ];
+  logRefusedConnections = true;
 };
-
-networking.networkmanager.dns = "systemd-resolved";
-
+    
   # Graphics
   hardware.graphics = {
       enable = true;
