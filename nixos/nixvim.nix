@@ -42,7 +42,7 @@
       nvim-surround.enable = true;
       auto-pairs.enable = true;
       telescope.enable = true; 
-      transparent.enable = true;
+      #transparent.enable = true;
       oil.enable = true;
       vimtex.enable = true;
       treesitter.enable = true;

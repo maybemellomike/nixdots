@@ -19,8 +19,6 @@
   boot.loader.systemd-boot.enable = true;
   system.nixos.variantName = "NixPadGNU/VimOS-Linux";
   boot.loader.efi.canTouchEfiVariables = true;
-  networking.hostName = "liam-tpad"; 
-  networking.networkmanager.enable = true;
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_CA.UTF-8";
   services.xserver.enable = true;
@@ -53,6 +51,25 @@
             };
           };
         };
+
+  # Networking
+  networking.hostName = "liam-tpad"; 
+  networking.networkmanager.enable = true;
+  # Encrypted DNS via systemd-resolved with DNS-over-TLS
+services.resolved = {
+  enable = true;
+  settings = {
+    Resolve = {
+      DNS = "1.1.1.1#cloudflare-dns.com 1.0.0.1#cloudflare-dns.com 2606:4700:4700::1111#cloudflare-dns.com";
+      DNSOverTLS = "true";
+      DNSSEC = "true";
+      Domains = "~.";
+      FallbackDNS = "";
+    };
+  };
+};
+
+networking.networkmanager.dns = "systemd-resolved";
 
   # Graphics
   hardware.graphics = {
