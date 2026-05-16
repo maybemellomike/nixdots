@@ -5,6 +5,7 @@
 
 environment.systemPackages = with pkgs; [
     hugo
+    aider-chat
     zotero
     nh
     cryptsetup
@@ -19,8 +20,6 @@ environment.systemPackages = with pkgs; [
     wofi
     waybar
     mpv
-    xorg.xrandr
-    xorg.xsetroot
     qutebrowser
     swaybg
     waypaper
