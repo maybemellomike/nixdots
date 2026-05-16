@@ -19,13 +19,13 @@ stylix.polarity = "dark";
     };
 
      sansSerif = {
-       package = pkgs.ubuntu-sans;
+       package = pkgs.aporetic;
        name = "Aporetic Sans";
      };
 
      monospace = {
-       package = pkgs.fantasque-sans-mono;
-       name = "Fantasque Sans Mono";
+       package = pkgs.aporetic;
+       name = "Aporetic Serif Mono";
      };
 
     emoji = {

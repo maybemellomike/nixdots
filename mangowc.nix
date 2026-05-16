@@ -17,6 +17,7 @@ exec-once = waybar
 exec-once = waypaper --random
 exec-once = hypridle
 mouse_natural_scrolling=0
+ov_tab_mode=0
 
 #gaps
 gappih=10
@@ -58,7 +59,7 @@ unfocused_opacity=0.9
 
 # Animation Configuration(support type:zoom,slide)
 # tag_animation_direction: 1-horizontal,0-vertical
-animations=1
+animations=0
 layer_animations=1
 animation_type_open=slide
 animation_type_close=slide
@@ -96,7 +97,7 @@ bind=SUPER+SHIFT,r,reload_config
 bind = SUPER,return,spawn,kitty
 bind = SUPER,n,spawn,networkmanager_dmenu -l 30 -i
 bind = SUPER,m,spawn,emacsclient -c
-bind=SUPER+ALT,l,spawn,hyprlock
+bind=SUPER+SHIFT,l,spawn,hyprlock
 bind=SUPER+SHIFT,f,togglefullscreen
 bind=SUPER,s,toggle_scratchpad
 bind=SUPER+SHIFT,c,killclient
